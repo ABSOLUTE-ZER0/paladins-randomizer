@@ -10,6 +10,9 @@ const championSchema = mongoose.Schema({
   title: {
     type: String,
   },
+  role: {
+    type: String,
+  },
   img: {
     type: String,
   },
