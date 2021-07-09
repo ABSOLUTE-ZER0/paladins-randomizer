@@ -1,0 +1,320 @@
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*- Shadows *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+.box-shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.418);
+}
+
+.box-shadow-1 {
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.418);
+}
+
+.one-edge-shadow {
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.705);
+}
+
+.one-edge-shadow-1 {
+  box-shadow: 0 5px 3px -3px rgba(0, 0, 0, 0.445);
+}
+
+.text-shadow {
+  background-clip: text;
+  text-shadow: 0px 3px 3px rgb(0, 0, 0);
+}
+
+.text-shadow-smooth {
+  text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc,
+    1px 2px 1px #eee, 3px 2px 1px #ccc;
+}
+
+.titleStyle1 {
+  position: relative;
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 60%;
+    left: 50%;
+    margin-left: -30%;
+    height: 1px;
+    content: "";
+    background-color: var(--color-active);
+    z-index: -2;
+  }
+  &:after {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    margin-left: -20px;
+    bottom: -40px;
+    content: "\00a7";
+    font-size: 30px;
+    line-height: 40px;
+    color: #c50000;
+    font-weight: 400;
+    z-index: -1;
+    display: block;
+    background-color: var(--color-background-main);
+  }
+}
+
+.titleStyle2 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding-bottom: 5px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 55px;
+    background-color: var(--color-hover-m);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 55px;
+    bottom: 2px;
+    height: 1px;
+    width: 95%;
+    max-width: 255px;
+    background-color: var(--color-hover);
+  }
+}
+
+.titleStyle3 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  padding-bottom: 13px;
+  position: relative;
+  width: fit-content;
+  transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+  &::before {
+    background-color: #c50000;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    height: 3px;
+    width: 30%;
+    margin-top: -0.5rem;
+    transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  &::after {
+    background-color: #c50000;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30%;
+    margin-bottom: 0.5rem;
+    transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+    &::before {
+      transform: translateX(250%);
+      transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    &::after {
+      transform: translateX(-250%);
+      transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  }
+}
+
+.titleStyle4 {
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 27px 0;
+  grid-gap: 20px;
+  align-items: center;
+
+  &:after,
+  &:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid var(--color-active);
+    border-top: 1px solid var(--color-active);
+    height: 5px;
+    background-color: var(--color-background-main);
+  }
+}
+
+.titleStyle5 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  border-bottom: 2px solid #c50000;
+  color: var(--color-text);
+  width: fit-content;
+  padding-right: 5rem;
+  white-space: pre-wrap;
+  span {
+    background-color: var(--color-text);
+    padding: 0.8rem 0;
+    color: var(--color-background-main);
+    overflow: visible;
+  }
+}
+
+//*-*-*-*-*-*-*-*-*-*- The 1300px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-desktop {
+  @media screen and (max-width: break-point(break-point-desktop)) {
+    @content;
+  }
+}
+
+//*-*-*-*-*-*-*-*-*-*- The 1000px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-tablet {
+  @media screen and (max-width: break-point(break-point-tablet)) {
+    @content;
+  }
+}
+
+//*-*-*-*-*-*-*-*-*-*- The 800px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-large {
+  @media screen and (max-width: break-point(break-point-large)) {
+    @content;
+  }
+}
+
+//*-*-*-*-*-*-*-*-*-*- The 600px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-medium {
+  @media screen and (max-width: break-point(break-point-medium)) {
+    @content;
+  }
+}
+
+//*-*-*-*-*-*-*-*-*-*- The 400px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-small {
+  @media screen and (max-width: break-point(break-point-small)) {
+    @content;
+  }
+}
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-------------------------------*-*-*-*-*-*-*--*-*-*--*-*-*-*-*-*-*-*
+
+::selection {
+  background-color: var(--color-hover);
+  color: var(--color-text);
+}
+
+*::-webkit-scrollbar {
+  width: 22px;
+  &-thumb {
+    border: 8px solid transparent;
+    padding: 2rem;
+    border-radius: 5rem;
+    background: var(--color-hover);
+    background-clip: padding-box;
+
+    &:hover {
+      border: 6px solid transparent;
+    }
+  }
+}
+
+@import "reset";
+@import "variables";
+@import "utilities";
+
+// layouts
+@import "./layouts/Header";
+@import "./layouts/ChampionTable";
+@import "./layouts/Randomizer";
+
+// pages
+@import "./pages/NotFound404";
+@import "./pages/Home";
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*- Placeholder Styles *-*-*-*-*-*-*-*-*-*-*-*-*
+// Background Properties
+%bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// Section Padding
+%sec-padding {
+  padding: 6vh 4vw;
+}
+
+// Styles for Section headings (h2)
+%sec-heading {
+  font-size: font-size(font-size-medium);
+  font-weight: font-weight(font-weight-light);
+  letter-spacing: 0.2rem;
+  color: var(--color-text);
+}
+
+// Styles for Section paragraphs (p)
+%sec-para {
+  font-size: font-size(font-size-small);
+  color: var(--color-text);
+  font-family: "Balsamiq Sans", cursive;
+  letter-spacing: 0.2rem;
+}
+
+//Styles for Section h3
+%sec-h3 {
+  font-size: font-size(font-size-small);
+  color: var(--color-text);
+}
+
+//Styles for Section h4
+%sec-h4 {
+  color: var(--color-text);
+}
+
+//************************** Scroll to top button *******************
+.scroll {
+  position: fixed;
+  bottom: 70rem;
+  right: 4rem;
+  height: 4rem;
+  width: 4rem;
+  background-image: url("../images/scroll.svg");
+  background-color: var(--color-hover-m);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 1rem;
+  border-radius: 50%;
+  z-index: 30;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.scroll.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 4rem;
+}
+
+//*-*-*-*-*-*- Dark Mode Smooth Transition For All HTML Elements -*-*-*-*-*-*-*
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+  transition: all 0.5s !important;
+  transition-delay: 0 !important;
+}

@@ -1,0 +1,184 @@
+.home {
+  grid-column: center-start / center-end;
+
+  &__welcome {
+    color: var(--color-text);
+
+    h1 {
+      text-align: center;
+      font-size: 5rem;
+      text-transform: uppercase;
+      color: var(--color-text);
+      letter-spacing: 1px;
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      margin-top: 20rem;
+    }
+    h1 p {
+      margin-top: 1rem;
+      font-size: 15px;
+      color: var(--color-active-m);
+      word-spacing: 1px;
+      font-weight: normal;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: "Raleway", sans-serif;
+      font-weight: 500;
+      width: fit-content;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h1 p:after,
+    h1 p:before {
+      content: " ";
+      width: 8%;
+      display: block;
+      border-bottom: 1px solid var(--color-text-m);
+      border-top: 1px solid var(--color-text-m);
+      height: 5px;
+      background-color: var(--color-background-main);
+    }
+
+    &-button {
+      color: var(--color-text);
+      font-size: 2rem;
+      font-weight: 900;
+      background-color: transparent;
+      text-transform: uppercase;
+      border-radius: 0.5rem;
+      border: 0;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+      padding: 1rem 2rem;
+      margin-left: 50%;
+      margin-top: 5rem;
+      margin-bottom: 10rem;
+      transform: translateX(-50%);
+
+      p {
+        padding: 0;
+        margin: 0;
+      }
+
+      span {
+        display: block;
+        position: absolute;
+      }
+
+      span:first-child {
+        top: 0;
+        left: -100%;
+        height: 0.2rem;
+        width: 100%;
+        background: linear-gradient(90deg, transparent, var(--color-hover));
+        transition: 0.5s;
+        transition-delay: 1s;
+      }
+
+      span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        height: 100%;
+        width: 0.2rem;
+        background: linear-gradient(180deg, transparent, var(--color-hover));
+        transition: 0.5s;
+        transition-delay: 0.75s;
+      }
+
+      span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        height: 0.2rem;
+        width: 100%;
+        background: linear-gradient(270deg, transparent, var(--color-hover));
+        transition: 0.7s;
+        transition-delay: 0.25s;
+      }
+
+      span:nth-child(4) {
+        top: 100%;
+        left: 0;
+        height: 100%;
+        width: 0.2rem;
+        background: linear-gradient(360deg, transparent, var(--color-hover));
+        transition: 0.5s;
+        transition-delay: 0s;
+      }
+
+      &:hover,
+      &:focus {
+        background: var(--color-hover);
+        transition-delay: 1s;
+      }
+
+      &:hover span:nth-child(1),
+      &:focus span:nth-child(1) {
+        left: 100%;
+        transition-duration: 1s;
+        transition-delay: 0s;
+      }
+
+      &:hover span:nth-child(2),
+      &:focus span:nth-child(2) {
+        top: 100%;
+        transition-duration: 1s;
+        transition-delay: 0.25s;
+      }
+
+      &:hover span:nth-child(3),
+      &:focus span:nth-child(3) {
+        right: 100%;
+        transition-duration: 1s;
+        transition-delay: 0.5s;
+      }
+
+      &:hover span:nth-child(4),
+      &:focus span:nth-child(4) {
+        top: -100%;
+        transition-duration: 1s;
+        transition-delay: 0.75s;
+      }
+    }
+  }
+
+  &__guide {
+    color: var(--color-text);
+
+    h1 {
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.5em;
+      padding-bottom: 10px;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    h1:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 5px;
+      width: 55px;
+      background-color: var(--color-active-m);
+      z-index: 5;
+    }
+    h1:after {
+      content: "";
+      position: absolute;
+      left: 55px;
+      bottom: 2px;
+      height: 1px;
+      width: 95%;
+      max-width: 200px;
+      background-color: var(--color-text-m);
+    }
+    p{
+      font-size: 1.5rem;
+    }
+  }
+}
